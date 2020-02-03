@@ -1,0 +1,36 @@
+# Tomcat settings
+server:
+  port: ${TOMCAT_SERVER_PORT:9090}
+  servlet:
+    context-path: /
+  compression:
+    enabled: true
+  tomcat:
+    uri-encoding: UTF-8
+    basedir: ./
+
+# Spring settings
+spring:
+  profiles:
+    active: dev
+  http:
+    multipart:
+      max-file-size: ${HTTP_MULTIPART_MAX_FILE_SIZE:100MB}
+      max-request-size: ${HTTP_MULTIPART_MAX_REQUEST_SIZE:100MB}
+
+# Logging settings
+logging:
+  level:
+    root: WARN
+    org:
+      springframework:
+        security: INFO
+        web: ERROR
+      hibernate: INFO
+    com:
+      github:
+        aaric: DEBUG
+  file:
+    path: ${LOGGING_FILE_PATH:./}
+    name: sb2.log
+    max-size: ${LOGGING_FILE_MAX_SIZE:20MB}
