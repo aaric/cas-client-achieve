@@ -1,0 +1,4 @@
+include 'client-webapp'
+include 'client-spring-boot'
+
+rootProject.name = 'cas-client-achieve'
